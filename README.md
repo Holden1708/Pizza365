@@ -7,3 +7,4 @@
   + lấy dữ liệu từ server hiện danh sách đơn hàng
 3. Một trang thể hiện chi tiết đơn hàng (orderDetail)
   + lấy dữ liệu từ query string khi ấn nút chi tiết từ trang orderList
+# Nguyễn Thanh Toàn
