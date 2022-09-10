@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<title> Bootstrap template- Pizza 365 project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<body onload="onPageLoading()">
+
+  <!-- Menu -->
+  <div class="container-fluid bg-light">
+    <div class="row">
+      <div class="col-sm-12">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav nav-fill w-100">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#plans">Plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  id="order-detail" onclick="onOrderDetailClick()">Order Detail</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container" style="padding: 120px 0 50px 0;">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <!-- Title row home --> 
+          <div class="col-sm-12">
+            <h1><b>Pizza 365</b></h1>
+            <h3><i>Truly italian !</i></h3>
+          </div> 
+
+          <!-- Slide row home --> 
+          <div class="col-sm-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="images/mon_y_1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/mon_y_2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/mon_y_3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/mon_y_4.jpg" alt="Fourth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/mon_y_5.jpg" alt="Fifth slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tại sao là Pizza 365 ? -->
+          <div class="col-sm-12 text-center p-4 mt-4">
+            <h2><b class="p-2 border-bottom">Tại sao là Pizza 365 ?</b></h2>
+          </div>
+
+          <!-- Tại sao là Pizza 365 ? -->
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-3 p-4 bg-warning border">
+                <h3 class="p-2">Thực đơn đa dạng</h3>
+                <p class="p-2">Pizza 365 phân phối cho người mua nhiều vị pizza khác nhau như : Hải sản, xúc xích, phomai, gà, bò ... Bên cạnh những món pizza được làm kỳ công, trang trí mê hoặc, người mua còn hoàn toàn có thể gọi thêm mỳ Ý spagetty hay những đồ uống khác.</p>
+              </div>
+              <div class="col-sm-3 p-4 bg-light border">
+                <h3 class="p-2">Hệ thống lớn, có mặt khắp Sài Gòn</h3>
+                <p class="p-2">Đây là một ưu điểm của sản phẩm được khách hàng đánh giá rất cao vì dù bạn ở đâu trên địa bàn Sài Gòn cũng có thể dễ dàng tìm kiếm một cửa hàng Pizza 365 để thưởng thức món ăn nức tiếng này.</p>
+              </div>
+              <div class="col-sm-3 p-4 bg-danger text-white border">
+                <h3 class="p-2">Không gian rộng rãi, sạch sẽ</h3>
+                <p class="p-2">Một khoảng trống thoáng rộng, trang trí ấm cúng khiến bạn cảm thấy tự do, thư giãn giải trí mỗi khi bước vào shop. Thêm một điểm cộng nữa chính là, thìa dĩa, vật dụng được sắp xếp ngăn nắp, thật sạch, tạo cảm xúc người mua được chăm sóc, chăm chút từ những đồ vật nhỏ nhất.</p>
+              </div>
+              <div class="col-sm-3 p-4 bg-warning border">
+                <h3 class="p-2">Dịch vụ chuyên nghiệp</h3>
+                <p class="p-2">Chỉ cần bước vào shop Pizza 365 bạn sẽ cảm nhận được ngay sự chuyên nghiệp. Người ta đến đây không chỉ vì đồ ăn ngon mà còn do cách giao hàng rất được lòng người. Bạn sẽ ấn tượng với sự nhiệt tình, thân thiện của nhân viên cấp dưới, từ tư vấn đồ ăn đến giải đáp những vướng mắc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="plans" class="row">
+          <!-- Menu Cmbo Pizza 365 -->
+          <div class="col-sm-12 text-center p-4 mt-4">
+            <h2><b class="p-1 border-bottom">Menu Combo Pizza 365</b></h2>
+            <p><span class="p-2">Hãy chọn cỡ pizza phù hợp với bạn!</span></p>
+          </div>
+          <!-- Menu Cmbo Pizza 365 -->
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card border-warning">
+                  <div class="card-header bg-danger text-white text-center">
+                    <h3>Small</h3>
+                  </div>
+                  <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Đương kính <b>20 cm</b></li>
+                      <li class="list-group-item"><b>2</b> Sườn nướng</li>
+                      <li class="list-group-item"><b>200g</b> Salad</li>
+                      <li class="list-group-item"><b>2</b> Nước ngọt</li>
+                      <li class="list-group-item">
+                        <h1><b>150.000 VND</b></h1> per one
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-success" id="sizeS" onclick="onBtnSizeSClick()">Chọn</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card border-warning">
+                  <div class="card-header bg-light text-center">
+                    <h3>Medium</h3>
+                  </div>
+                  <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Đương kính <b>25 cm</b></li>
+                      <li class="list-group-item"><b>4</b> Sườn nướng</li>
+                      <li class="list-group-item"><b>300g</b> Salad</li>
+                      <li class="list-group-item"><b>3</b> Nước ngọt</li>
+                      <li class="list-group-item">
+                        <h1><b>200.000 VND</b></h1> per one
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-success" id="sizeM" onclick="onBtnSizeMClick()">Chọn</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card border-warning">
+                  <div class="card-header bg-warning text-center">
+                    <h3>Large</h3>
+                  </div>
+                  <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Đương kính <b>30 cm</b></li>
+                      <li class="list-group-item"><b>8</b> Sườn nướng</li>
+                      <li class="list-group-item"><b>500g</b> Salad</li>
+                      <li class="list-group-item"><b>4</b> Nước ngọt</li>
+                      <li class="list-group-item">
+                        <h1><b>250.000 VND</b></h1> per one
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-success" id="sizeL" onclick="onBtnSizeLClick()">Chọn</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="about" class="row">
+          <!-- Title Chọn loại Pizza -->
+          <div class="col-sm-12 text-center p-4 mt-4">
+            <h2><b class="p-2 border-bottom">Chọn loại Pizza</b></h2>
+          </div>
+
+          <!-- Content Chọn loại Pizza -->
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card w-100 border-warning" style="width: 18rem;">
+                  <img src="images/pizza_type_1.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Seafood Pizza</h3>
+                    <p>Pizza Hải Sản</p>
+                    <p>Tôm, Mực, Thanh Cua, Hành Tây, Thơm Phủ Xốt Tiêu Đen Thơm Nóng Và Phô Mai Mozzarella.</p>
+                    <p><button class="btn btn-success w-100" id="select-seafood" onclick="onBtnSeafoodPizzaClick()">Chọn</button></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card w-100 border-warning" style="width: 18rem;">
+                  <img src="images/pizza_type_2.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Chicken Pizza</h3>
+                    <p>Pizza Gà</p>
+                    <p>Pizza Gà Nướng Nấm Trong Cuộc Phiêu Lưu Vị Giác Với Thịt Gà, Nấm, Thơm, Cà Rốt Và Rau Mầm Phủ Xốt Tiêu Đen Thơm Nồng.</p>
+                    <p><button class="btn btn-success w-100" id="select-chicken" onclick="onBtnChickenPizzaClick()">Chọn</button></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card w-100 border-warning" style="width: 18rem;">
+                  <img src="images/pizza_type_3.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Barbecue Pizza</h3>
+                    <p>Pizza Thịt Nướng</p>
+                    <p>Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni.</p>
+                    <p><button class="btn btn-success w-100" id="select-barbecue" onclick="onBtnBarbecuePizzaClick()">Chọn</button></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="drink" class="row">
+          <!-- Title Chọn đồ uống -->
+          <div class="col-sm-12 text-center p-4 mt-4">
+            <h2><b class="p-2 border-bottom">Chọn đồ uống</b></h2>
+          </div>
+          <div class="col-sm-12">
+            <select id="select-drink" class="form-control form-group border-warning">
+              <option type="Node"  value="DRINK_NOT_SELECTED">Chọn đồ uống</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="contact" class="row">
+          <!-- Title Thông tin đơn hàng -->
+          <div class="col-sm-12 text-center p-4 mt-4">
+            <h2><b class="p-2 border-bottom">Thông tin đơn hàng</b></h2>
+          </div>
+
+          <!-- Content Thông tin đơn hàng -->
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="fullname">Họ và tên</label>
+                  <input type="text" class="form-control" id="inp-fullname" placeholder="Họ và tên">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="inp-email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="dien-thoai">Điện thoại</label>
+                  <input type="text" class="form-control" id="inp-dien-thoai" placeholder="Điện thoại">
+                </div>
+                <div class="form-group">
+                  <label for="dia-chi">Địa chỉ</label>
+                  <input type="text" class="form-control" id="inp-dia-chi" placeholder="Địa chỉ">
+                </div>
+                <div class="form-group">
+                  <label for="message">Lời nhắn</label>
+                  <input type="text" class="form-control" id="inp-message" placeholder="Lời nhắn">
+                </div>
+                <div class="form-group">
+                  <label for="message">Mã giảm giá (voucher ID) </label>
+                  <input type="text" class="form-control" id="inp-voucher" placeholder="Mã giảm giá">
+                </div>
+                <button type="button" class="btn btn-success w-100" id="btn-kiem-tra-don" onclick="onBtnKiemTraDonClick()">Kiểm tra đơn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="container mt-3 mb-3" id="div-container" style="display:none">
+    <div class="row">
+      <div class="col-sm-12 bg-info"  >
+            <!-- Title Thông tin đơn hàng -->
+          <div class="col-sm-12 mt-1 p-1">
+            <p class="border-bottom"><b>Thông tin đơn hàng</b></p>
+          </div>
+          <div class="col-sm-12 mb-3">
+            <p id="thong-tin-don-hang" class="p-2">...</b></p>
+            <button type="button" class="btn btn-warning w-100" id="btn-gui-don" onclick="onBtnGuiDonClick()">Gửi đơn</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container  mt-3 mb-3" id="div-cam-on" style="display:none" >
+    <div class="row">
+      <div class="col-sm-12 bg-warning jumbotron" >
+          <div class="col-sm-12 mt-1">
+            <p>Cảm ơn bạn đã đặt hàng tại Pizza 365. Mã đơn hàng của bạn là:</p>
+          </div>
+          <div class="row col-sm-12 mb-3 form-group">
+            <div class="col-sm-3">
+              <label> Mã đơn hàng</label>
+            </div>
+            <div class="col-sm-9">
+              <input id="inp-order-id" type="text" class="form-control border border-dark">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid bg-light p-5">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <h4 class="m-2">Footer</h4>
+        <a href="#" class="btn btn-dark m-3"><i class="fa fa-arrow-up"></i>To the top</a>
+        <div class="m-2">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i>
+          <i class="fa fa-instagram w3-hover-opacity"></i>
+          <i class="fa fa-snapchat w3-hover-opacity"></i>
+          <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+          <i class="fa fa-twitter w3-hover-opacity"></i>
+          <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    "use strict";
+    /*** Vùng 1: Khai báo biến toàn cục ***/
+    const gREQUEST_STATUS_OK = 200;
+    const gREQUEST_READY_STATUS_FINISH_AND_OK = 4;
+    const gREQUEST_CREATE_SUCCESS = 201; // status 201 tao thanh cong
+    // bạn có thê dùng để lưu trữ combo được chọn, mỗi khi khách chọn bạn lại đổi giá trị properties của nó
+    var gSelectedMenuStructure = {
+      menuName: "...",    // S, M, L
+      duongKinhCM: 0,
+      suonNuong: 0,
+      saladGr: 0,
+      drink: 0,
+      priceVND: 0,
+      sizePizzaDuocChon () {
+        console.log("Cỡ pizza được chọn: " + this.menuName);
+      }
+    }
+    // bạn có thể dùng để lưu loại pizza đươc chọn, mỗi khi khách chọn, bạn lại đổi giá trị cho nó
+    var gSelectedPizzaType = {
+      typeName: "..."
+    }
+    // lưu loại đồ uống được chọn
+    var gSelectDrinkType = null;
+    // lưu thông tin đơn hàng
+    var gThongTinDonHang = null;
+    // lưu id và orderId sau khi ấn nút gửi đơn để thêm vào query string
+    var gId = 0;
+    var gOrderId = 0;
+    var gDiscount = 0;
+    var gThanhTien = 0;
+    /*** Vùng 2: Event Handler - Vùng xử lý sự kiện ***/
+    // hàm tải trang - page loading
+    function onPageLoading (){
+      // load dữ liệu đồ uống vào ô chọn đồ uống
+      loadDrinkListFormApi();
+    }
+    //selected the size M
+    function onBtnSizeMClick() {
+      "use strict";
+      // map lựa chọn vào gSelectedMenuStructure, chỗ này còn rất nhiều properties tôi chưa gán
+      getDataFromMenuCombo("size M", "25 cm", 4, "300 g", 3, 200000);
+      
+      //set trạng thái của nut - set the buttons style 
+      setMenuButtonsColor(gSelectedMenuStructure.menuName);
+      console.log(gSelectedMenuStructure);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("about").scrollIntoView();
+    }
+    //selected the size L
+    function onBtnSizeLClick() {
+      "use strict";
+      // map lựa chọn vào gSelectedMenuStructure  //chỗ này còn nhiều properties tôi chưa gán
+      getDataFromMenuCombo("size L", "30 cm", 8, "500 g", 4, 250000);
+      
+      //set trạng thái của nut - set the buttons style 
+      setMenuButtonsColor(gSelectedMenuStructure.menuName);
+      console.log(gSelectedMenuStructure);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("about").scrollIntoView();
+    }
+    //selected the size S
+    function onBtnSizeSClick() {
+      "use strict";
+      // map lựa chọn vào gSelectedMenuStructure
+       //chỗ này còn nhiều dòng code nữa, nhiều properties tôi chưa gán
+      getDataFromMenuCombo("size S", "20 cm", 2, "200 g", 2, 150000);
+      
+      //set trạng thái của nut - set the buttons style 
+      setMenuButtonsColor(gSelectedMenuStructure.menuName);
+      console.log(gSelectedMenuStructure);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("about").scrollIntoView();
+    }
+
+    // select type : Seafood Pizza
+    function onBtnSeafoodPizzaClick(){
+      "use strict";
+      gSelectedPizzaType.typeName = "Seafood Pizza";
+      // đổi màu nút khi chọn
+      setTypeButtonsColor(gSelectedPizzaType.typeName);
+      console.log(gSelectedPizzaType);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("drink").scrollIntoView();
+    }
+    // select type : Chicken Pizza
+    function onBtnChickenPizzaClick(){
+      "use strict";
+      gSelectedPizzaType.typeName = "Chicken Pizza";
+      // đổi màu nút khi chọn
+      setTypeButtonsColor(gSelectedPizzaType.typeName);
+      console.log(gSelectedPizzaType);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("drink").scrollIntoView();
+    }
+    // select type : Barbecue Pizza
+    function onBtnBarbecuePizzaClick(){
+      "use strict";
+      gSelectedPizzaType.typeName = "Barbecue Pizza";
+      // đổi màu nút khi chọn
+      setTypeButtonsColor(gSelectedPizzaType.typeName);
+      console.log(gSelectedPizzaType);
+      // đay là ví dụ để bạn đẩy view đến 01 element khác (focus vào vùng đó)
+      document.getElementById("drink").scrollIntoView();
+    }
+
+
+    // hàm xử lí khi nhấn nút kiểm tra đơn
+    function onBtnKiemTraDonClick(){
+      // kiểm tra đã chọn menu và type Pizza và đồ uống
+      var vSelectDrink = document.getElementById("select-drink");
+      gSelectDrinkType = vSelectDrink.value;
+
+      if (gSelectedMenuStructure.menuName == "..." ){
+        alert("Vui lòng chọn Combo size Pizza!");
+        return true;
+      }
+      else if(gSelectedPizzaType.typeName == "..."){
+        alert("Vui lòng chọn loại Pizza!");
+        return true;
+      }
+      else if(gSelectDrinkType == "DRINK_NOT_SELECTED"){
+        alert("Vui lòng chọn loại đồ uống!");
+        return true;
+      }
+      else{
+        // khai báo đối tượng :  thông tin người đặt hàng
+        var vThongTinDonHang = {
+          menuDuocChon: "",
+          loaiPizza: "",
+          loaiNuocUong: "",
+          hoVaTen: "",
+          email: "",
+          dienThoai: "",
+          diaChi: "",
+          loiNhan: "",
+          voucher: "",
+          priceAnnualVND() {
+              return gSelectedMenuStructure.priceVND*(1-(this.discount/100));
+          },
+          discount: 0
+        }
+        // b1: get data form form
+          getDataDonHangFromForm(vThongTinDonHang);
+          // b2: validate data
+          var vValidated = validateDataFromForm(vThongTinDonHang);
+            if (vValidated){
+              // b3: hiển thị dữ liệu
+              showDataDonHang(vThongTinDonHang);
+            }
+          gThongTinDonHang = vThongTinDonHang;
+        }
+       
+    }
+
+    // hàm xử lý khi nhấn nút gửi đơn
+    function onBtnGuiDonClick(){
+      "use strict";
+      
+      var vDivContainer = document.getElementById("div-container");
+      var vDivCamOn = document.getElementById("div-cam-on");
+      vDivContainer.style.display  = "none";
+      vDivCamOn.style.display = "block";
+      
+      // khai báo đối tượng lưu trên form
+      var vDonHangObject = {
+        kichCo: "",
+        duongKinh: "",
+        suon: "",
+        salad: "",
+        loaiPizza: "",
+        idVourcher: "",
+        idLoaiNuocUong: "",
+        soLuongNuoc: "",
+        hoTen: "",
+        thanhTien: "",
+        email: "",
+        soDienThoai: "",
+        diaChi: "",
+        loiNhan: ""
+      };
+      // b1: thu thập dữ liệu
+      vDonHangObject.kichCo = gThongTinDonHang.menuDuocChon;
+      vDonHangObject.duongKinh = gSelectedMenuStructure.duongKinhCM;
+      vDonHangObject.suon = gSelectedMenuStructure.suonNuong;
+      vDonHangObject.salad = gSelectedMenuStructure.saladGr;
+      vDonHangObject.loaiPizza = gSelectedPizzaType.typeName;
+      vDonHangObject.idVourcher = gThongTinDonHang.voucher;
+      vDonHangObject.idLoaiNuocUong = gSelectDrinkType;
+      vDonHangObject.soLuongNuoc = gSelectedMenuStructure.drink;
+      vDonHangObject.hoTen = gThongTinDonHang.hoVaTen;
+      vDonHangObject.thanhTien = gThanhTien;
+      vDonHangObject.email = gThongTinDonHang.email;
+      vDonHangObject.soDienThoai = gThongTinDonHang.dienThoai;
+      vDonHangObject.diaChi = gThongTinDonHang.diaChi;
+      vDonHangObject.loiNhan = gThongTinDonHang.loiNhan;
+      // call Api để tạo đơn hàng (ghi dữ liệu vào sercer)
+      var vXmlHttpCreateOrder= new XMLHttpRequest();
+      callApiCreateOrder(vXmlHttpCreateOrder, vDonHangObject);
+      vXmlHttpCreateOrder.onreadystatechange = function () {
+        if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_CREATE_SUCCESS){
+          var bCreatedOrderJson = vXmlHttpCreateOrder.responseText;
+          console.log(bCreatedOrderJson);
+          var bCreateOrderObject = JSON.parse(bCreatedOrderJson);
+          var vInputOrderId = document.getElementById("inp-order-id");
+          vInputOrderId.value = bCreateOrderObject.orderId;
+
+          // lưu giá trị id và orderId
+          gId = bCreateOrderObject.id;
+          gOrderId = bCreateOrderObject.orderId;
+        }
+      }
+    }
+
+    // hàm xử lý khi ấn Order Detail 
+    function onOrderDetailClick(){
+      console.log(gId + " " + gOrderId);
+      var vUrlSiteOpen = "viewOrder.html" + "?" 
+          + "id=" + gId + "&"
+          + "orderId=" + gOrderId ;
+           window.location.href = vUrlSiteOpen; 
+    }
+
+    /*** Vùng 3: Vùng khai báo hàm dùng chung ***/
+
+    //set trạng thái của 03 nút trong menu (tại price pannel) 
+    function setMenuButtonsColor(paramSelectedMenuName) {
+      "use strict";
+      //truy vấn 03 nút
+      console.log("selected menu .. = " + paramSelectedMenuName); //tracking
+      var vSelectSizeMButton = document.getElementById("sizeM");
+      var vSelectSizeLButton = document.getElementById("sizeL");
+      var vSelectSizeSButton = document.getElementById("sizeS");
+      // set classname cho 03 nút này, tùy và lựa chon là gì
+      if (paramSelectedMenuName == "size S") {
+        vSelectSizeSButton.className = "btn btn-warning"; //oragge
+        vSelectSizeMButton.className = "btn btn-success";
+        vSelectSizeLButton.className = "btn btn-success";
+      }
+      else if (paramSelectedMenuName == "size M") {
+        vSelectSizeSButton.className = "btn btn-success";
+        vSelectSizeMButton.className = "btn btn-warning"; //orange
+        vSelectSizeLButton.className = "btn btn-success";
+
+      } else if (paramSelectedMenuName == "size L") {
+        vSelectSizeSButton.className = "btn btn-success";
+        vSelectSizeMButton.className = "btn btn-success";
+        vSelectSizeLButton.className = "btn btn-warning"; //orange
+      }
+    }
+
+    // hàm lấy dữ liệu từ menu 
+    function getDataFromMenuCombo(paramMenuName, paramDuongKinh, paramSuonNuong, paramSalad, paramDrink, paramPriceVND ){
+      gSelectedMenuStructure.menuName = paramMenuName;
+      gSelectedMenuStructure.duongKinhCM = paramDuongKinh;
+      gSelectedMenuStructure.suonNuong = paramSuonNuong;
+      gSelectedMenuStructure.saladGr = paramSalad;
+      gSelectedMenuStructure.drink = paramDrink;
+      gSelectedMenuStructure.priceVND = paramPriceVND;
+    }
+
+    //set trạng thái của 03 nút trong menu chọn loại pizza
+    function setTypeButtonsColor(paramSelectedTypeName) {
+      "use strict";
+      //truy vấn 03 nút
+      console.log("selected type .. = " + paramSelectedTypeName); //tracking
+      var vSelectSeafoodButton = document.getElementById("select-seafood");
+      var vSelectChickenButton = document.getElementById("select-chicken");
+      var vSelectBarbecueButton = document.getElementById("select-barbecue");
+      // set classname cho 03 nút này, tùy và lựa chon là gì 
+      if (paramSelectedTypeName == "Seafood Pizza") {
+        vSelectSeafoodButton.className = "btn btn-warning w-100"; //oragge
+        vSelectChickenButton.className = "btn btn-success w-100";
+        vSelectBarbecueButton.className = "btn btn-success w-100";
+      }
+      else if (paramSelectedTypeName == "Chicken Pizza") {
+        vSelectSeafoodButton.className = "btn btn-success w-100";
+        vSelectChickenButton.className = "btn btn-warning w-100"; //orange
+        vSelectBarbecueButton.className = "btn btn-success w-100";
+
+      } else if (paramSelectedTypeName == "Barbecue Pizza") {
+        vSelectSeafoodButton.className = "btn btn-success w-100";
+        vSelectChickenButton.className = "btn btn-success w-100";
+        vSelectBarbecueButton.className = "btn btn-warning w-100"; //orange
+      }
+    }
+
+    // hàm lấy dữ liệu đồ uống từ api và load vào mục chọn đồ uống
+    function loadDrinkListFormApi(){
+      "use strict";
+      const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/drinks";
+      // call api lấy dữ liệu
+      var vXmlHttpDrink = new XMLHttpRequest;
+      vXmlHttpDrink.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    handlerDrinkListToForm(vXmlHttpDrink);
+                }
+            };
+            vXmlHttpDrink.open("GET",vBASE_URL, true);
+            vXmlHttpDrink.send();
+    }
+
+    // hàm hiển thị danh sách đồ uống vào mục chọn đồ uống
+    function handlerDrinkListToForm(paramXmlHttpDrink){
+      var vSelectDrinkElement = document.getElementById("select-drink");
+      var vDrinkListArray = JSON.parse(paramXmlHttpDrink.responseText);
+      for (var bI = 0; bI < vDrinkListArray.length; bI ++){
+        var vOptionDrinkElement = document.createElement("option");
+        vOptionDrinkElement.value = vDrinkListArray[bI].maNuocUong;
+        vOptionDrinkElement.text = vDrinkListArray[bI].tenNuocUong;
+        vSelectDrinkElement.appendChild(vOptionDrinkElement);
+        
+      }
+    }
+  
+    // hàm lấy dữ liệu từ form
+    function getDataDonHangFromForm(paramThongTinDonHang){
+      "use strict";
+      var vSelectDrink = document.getElementById("select-drink");
+      var vInputHoVaTen = document.getElementById("inp-fullname");
+      var vInputEmail = document.getElementById("inp-email");
+      var vInputDienThoai = document.getElementById("inp-dien-thoai");
+      var vInputDiaChi = document.getElementById("inp-dia-chi");
+      var vInputLoiNhan = document.getElementById("inp-message");
+      var vInputVoucherId = document.getElementById("inp-voucher");
+
+      paramThongTinDonHang.menuDuocChon = gSelectedMenuStructure.menuName;
+      paramThongTinDonHang.loaiPizza = gSelectedPizzaType.typeName;
+      paramThongTinDonHang.loaiNuocUong = vSelectDrink.text;
+
+      paramThongTinDonHang.hoVaTen = vInputHoVaTen.value.trim();
+      paramThongTinDonHang.email = vInputEmail.value.trim();
+      paramThongTinDonHang.dienThoai = vInputDienThoai.value.trim();
+      paramThongTinDonHang.diaChi = vInputDiaChi.value.trim();
+      paramThongTinDonHang.loiNhan = vInputLoiNhan.value.trim();
+      
+
+      // lấy dữ liệu phần trăm giảm giá dựa vào voucher 
+      const vBASE_URL = "http://42.115.221.44:8080/devcamp-voucher-api/voucher_detail";
+      var vValueVoucherId = vInputVoucherId.value.trim();  //một số mã đúng để test: 95531, 81432,...
+      if (vValueVoucherId != 0){
+        var vXmlHttpDiscount = new XMLHttpRequest();
+        vXmlHttpDiscount.open("GET", vBASE_URL + "/" + vValueVoucherId , false);
+        vXmlHttpDiscount.send(null);
+            if (vXmlHttpDiscount.status == gREQUEST_STATUS_OK) { // restFullAPI successful
+                // nhận lại response dạng JSON ở xmlHttp.responseText và chuyển thành object
+                console.log(vXmlHttpDiscount.responseText);
+                var vVoucherObject = JSON.parse(vXmlHttpDiscount.responseText);
+                paramThongTinDonHang.discount = vVoucherObject.phanTramGiamGia;
+                paramThongTinDonHang.voucher = vVoucherObject.maVoucher;
+                gThanhTien = gSelectedMenuStructure.priceVND*(1-(paramThongTinDonHang.discount/100));
+            }
+            else {
+                // không nhận lại được data do vấn đề gì đó: khả năng mã voucher ko dúng
+                console.log("Không tìm thấy voucher " + vXmlHttpDiscount.responseText);
+            }
+        }
+      }
+
+    // hàm validate dữ liệu đơn hàng lấy từ form
+    function validateDataFromForm(paramThongTinDonHang){
+      if (paramThongTinDonHang.hoVaTen == ""){
+        alert("Vui lòng điền họ và tên!");
+        return false;
+      }
+      if (paramThongTinDonHang.email == ""){
+        alert("Vui lòng điền email!");
+        return false;
+      }
+      if (validateEmail(paramThongTinDonHang.email) == false){
+        alert("Email nhập vào không hợp lệ!");
+        return false;
+      }
+      if (paramThongTinDonHang.dienThoai == ""){
+        alert("Vui lòng nhập số điện thoại!");
+        return false;
+      }
+      if (paramThongTinDonHang.diaChi == ""){
+        alert("Vui lòng nhập địa chỉ!");
+        return false;
+      }
+      return true;
+    }
+
+    // Hàm kiểm tra định dạng email
+    function validateEmail(paramEmail) {
+      var vValidRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (paramEmail.match(vValidRegex)) {
+          return true;
+        } else {
+          return false;
+        }
+    }
+
+    // hàm hiển thị dữ liệu nhập vào vùng xanh
+    function showDataDonHang(paramThongTinDonHang){
+      var vDivConatinerThongTin = document.getElementById("div-container");
+      var vPThongTin = document.getElementById("thong-tin-don-hang");
+
+      vDivConatinerThongTin.style.display = "block";
+      vPThongTin.innerHTML = "Họ và tên: " + paramThongTinDonHang.hoVaTen + "<br>";
+      vPThongTin.innerHTML += "Email: " + paramThongTinDonHang.email + "<br>";
+      vPThongTin.innerHTML += "Điện thoại: " + paramThongTinDonHang.dienThoai + "<br>";
+      vPThongTin.innerHTML += "Địa chỉ: " + paramThongTinDonHang.diaChi + "<br>";
+      vPThongTin.innerHTML += "Lời nhắn: " + paramThongTinDonHang.loiNhan + "<br>";
+
+      vPThongTin.innerHTML += "-------------------------" + "<br>";
+
+      vPThongTin.innerHTML += "Kích cỡ: " + gSelectedMenuStructure.menuName + "<br>";
+      vPThongTin.innerHTML += "Đường kính: " + gSelectedMenuStructure.duongKinhCM + "<br>";
+      vPThongTin.innerHTML += "Sườn nướng: " + gSelectedMenuStructure.suonNuong + "<br>";
+      vPThongTin.innerHTML += "Salad: " + gSelectedMenuStructure.saladGr + "<br>";
+      vPThongTin.innerHTML += "Số lượng nước ngọt: " + gSelectedMenuStructure.drink + "<br>";
+
+      vPThongTin.innerHTML += "-------------------------"+ "<br>";
+
+      vPThongTin.innerHTML += "Loại Pizza: " + paramThongTinDonHang.loaiPizza + "<br>";
+      vPThongTin.innerHTML += "Loại nước uống: " + gSelectDrinkType + "<br>";
+      vPThongTin.innerHTML += "Mã voucher: " + paramThongTinDonHang.voucher + "<br>";
+      vPThongTin.innerHTML += "Giá VND: " + gSelectedMenuStructure.priceVND + "<br>";
+      vPThongTin.innerHTML += "Discount: " + paramThongTinDonHang.discount + " %" + "<br>";
+      vPThongTin.innerHTML += "Phải thanh toán: " + gThanhTien + " VND" + "<br>";
+    }
+  
+    // hàm gọi Api để tạo đơn hàng
+    function callApiCreateOrder(paramXmlHttpCreateOrder, paramDonHangObj){
+      const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+      paramXmlHttpCreateOrder.open("POST", vBASE_URL, true);
+      paramXmlHttpCreateOrder.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      paramXmlHttpCreateOrder.send(JSON.stringify(paramDonHangObj));
+    }
+  </script>
+</body>
+
+</html>
