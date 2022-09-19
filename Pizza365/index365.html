@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza 365</title>
+    
+    <!-- Nhúng các thư viện BS4 & jQuery, awesome font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <!-- Các file css và js tự định nghĩa thêm -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  
+</head>
+<body>
+    <div class="container">
+        <!--Navbar-->
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-expand-lg bg-orange navbar-light fixed-top">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav form-inline nav-fill w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#combo">Combo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#loaipizza">Loại Pizza</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#guidonhang">Gửi đơn hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="container" style="padding: 120px 0 50px 0;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <!-- Title row home --> 
+                    <div class="col-sm-12 text-orange">
+                        <h1><b>Pizza 365</b></h1>
+                        <h3><i>Truly italian !</i></h3>
+                    </div> 
+      
+                    <!-- Slide row trang chủ --> 
+                    <div class="col-sm-12">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="Images/1.jpg" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/2.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/3.jpg" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/4.jpg" alt="Fourth slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Title row home --> 
+                    <div class="title col-sm-12">
+                        <h2><b class="border-bottom border-warning">Tại sao là Pizza 365 ?</b></h2>
+                    </div> 
+
+                    <!-- Tại sao là Pizza 365 ? -->
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="bg-lightgolden col-sm-3 p-4 border border-warning">
+                                <h3 class="p-2">Đa dạng</h3>
+                                <p class="p-2">Số lượng pizza đa dạng, có đầy đủ các loại pizza đang hot nhất hiện nay.</p>
+                            </div>
+                            <div class="bg-yellow col-sm-3 p-4 border border-warning">
+                                <h3 class="p-2">Chất lượng</h3>
+                                <p class="p-2">Nguyên liệu sạch 100% rõ nguồn gốc, quy trình chế biến đảm bảo vệ sinh an toàn thực phẩm.</p>
+                            </div>
+                            <div class="bg-lightsalmon col-sm-3 p-4 border border-warning">
+                                <h3 class="p-2">Hương vị</h3>
+                                <p class="p-2">Đảm bảo hương vị ngon, độc lạ mà bạn chỉ có thể trải nghiệm từ Pizza 365.</p>
+                            </div>
+                            <div class="bg-orange col-sm-3 p-4 border border-warning">
+                                <h3 class="p-2">Dịch vụ</h3>
+                                <p class="p-2">Nhân viên thân thiện, nhà hàng hiện đại. Dịch vụ giao hàng nhanh, chất lượng, tân tiến.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chọn size Pizza -->
+                    <div class="col-sm-12" id="combo">
+                        <div class="title" >
+                            <h2><b class="border-bottom border-warning">Chọn size Pizza</b></h2>
+                            <p>Chọn combo pizza phù hợp với nhu cầu của bạn.</p>
+                        </div>
+                        <!--Menu combo Pizza-->
+                        <div class="col-sm-12">
+                            <div class="row text-center">
+                                <div class="col-sm-4">
+                                    <div class="card border-warning">
+                                        <div class="card-header bg-orange">
+                                            <h3>S (small)</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Đường kính: <b> 20 cm</b></li>
+                                                <li class="list-group-item"> Sườn nướng: <b> 2</b></li>
+                                                <li class="list-group-item"> Salad: <b>200g</b></li>
+                                                <li class="list-group-item"> Nước ngọt: <b>2</b></li>
+                                                <li class="list-group-item"><h1><b>150.000</b></h1> VNĐ</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-orange w-100" id="sizeS">Chọn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card border-warning">
+                                        <div class="card-header bg-orange">
+                                            <h3>M (medium)</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Đường kính: <b> 25 cm</b></li>
+                                                <li class="list-group-item"> Sườn nướng: <b> 4</b></li>
+                                                <li class="list-group-item"> Salad: <b>300g</b></li>
+                                                <li class="list-group-item"> Nước ngọt: <b>3</b></li>
+                                                <li class="list-group-item"><h1><b>200.000</b></h1> VNĐ</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-orange w-100" id="sizeM">Chọn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card border-warning">
+                                        <div class="card-header bg-orange">
+                                            <h3>L (large)</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Đường kính: <b> 30 cm</b></li>
+                                                <li class="list-group-item"> Sườn nướng: <b> 8</b></li>
+                                                <li class="list-group-item"> Salad: <b>500g</b></li>
+                                                <li class="list-group-item"> Nước ngọt: <b>4</b></li>
+                                                <li class="list-group-item"><h1><b>250.000</b></h1> VNĐ</li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-orange  w-100" id="sizeL">Chọn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chọn loại Pizza -->
+                    <div class="col-sm-12" id="loaipizza">
+                        <div class="title" >
+                            <h2><b class="border-bottom border-warning">Chọn loại Pizza</b></h2>
+                        </div>
+                        <!-- Content Chọn loại Pizza -->
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="card w-100 border-warning" style="width: 18rem;">
+                                        <img src="images/hawaiian.jpg" class="card-img-top">
+                                        <div class="card-body">
+                                            <h4>HAWAIIAN</h4>
+                                            <p>PIZZA DĂM BÔNG DỨA KIỂU HAWAII</p>
+                                            <p>Xốt Cà Chua, Phô Mai Mozzarella, Thịt Dăm Bông, Thơm.</p><br>
+                                            <p><button class="btn btn-orange w-100" id="select-hawaii">Chọn</button></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card w-100 border-warning" style="width: 18rem;">
+                                        <img src="images/seafood.jpg" class="card-img-top">
+                                        <div class="card-body">
+                                            <h4>OCEAN MANIA</h4>
+                                            <p>PIZZA HẢI SẢN XỐT MAYONNAISE</p>
+                                            <p>Xốt Cà Chua, Phô Mai Mozzarella, Tôm, Mực, Thanh Cua, Hành Tây.</p><br>
+                                            <p><button class="btn btn-orange w-100" id="select-seafood">Chọn</button></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card w-100 border-warning" style="width: 18rem;">
+                                        <img src="images/bacon.jpg" class="card-img-top">
+                                        <div class="card-body">
+                                            <h4>CHEESY CHICKEN BACON</h4>
+                                            <p>PIZZA GÀ PHÔ MAI THỊT HEO XÔNG KHÓI</p>
+                                            <p>Xốt Phô Mai, Thịt Gà, Thịt Heo Muối, Phô Mai Mozzarella, Cà Chua.</p><br>
+                                            <p><button class="btn btn-orange w-100" id="select-bacon">Chọn</button></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chọn nước uống -->
+                    <div class="col-sm-12">
+                        <div class="title" >
+                            <h2><b class="border-bottom border-warning">Chọn đồ uống</b></h2>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <select id="select-drink" class="form-control form-group border-warning">
+                                    <option type="Node"  value="all">Tất cả loại nước uống</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form gửi đơn hàng -->
+                    <div class="col-sm-12" id="guidonhang">
+                        <div class="title" >
+                            <h2><b class="border-bottom border-warning">Gửi đơn hàng</b></h2>
+                        </div>
+                        <!-- Content gửi đơn hàng -->
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="ten">Tên</label>
+                                        <input type="text" class="form-control" id="inp-ten" placeholder="Nhập tên">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="inp-email" placeholder="Nhập email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dienthoai">Điện thoại</label>
+                                        <input type="text" class="form-control" id="inp-dien-thoai" placeholder="Nhập số điện thoại">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="diachi">Địa chỉ</label>
+                                        <input type="text" class="form-control" id="inp-dia-chi" placeholder="Nhập địa chỉ">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="voucherId">Mã giảm giá</label>
+                                        <input type="text" class="form-control" id="inp-voucherId" placeholder="Nhập mã giảm giá">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loinhan">Lời nhắn</label>
+                                        <input type="text" class="form-control" id="inp-loi-nhan" placeholder="Nhập lời nhắn">
+                                    </div>
+                                    <button type="button" class="btn btn-orange w-100" id="btn-gui">Gửi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="container-fluid bg-orange p-5">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h4 class="m-2">Footer</h4>
+                <a href="#" class="btn btn-dark m-3"><i class="fa fa-arrow-up"></i> To the top</a>
+                <div class="m-2">
+                    <i class="fa-brands fa-square-facebook w3-hover-opacity"></i>
+                    <i class="fa-brands fa-instagram w3-hover-opacity"></i>
+                    <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+                    <i class="fa-brands fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa-brands fa-twitter w3-hover-opacity"></i>
+                    <i class="fa-brands fa-linkedin-in w3-hover-opacity"></i>
+                </div>
+                <p><b>Powered by DEVCAMP</b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal body - chứa form dữ liệu -->
+    <div>
+        <div id="order-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="h4-modal-title">Thông tin đơn hàng</h4>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                         <!-- Form thiết kế như form bình thường, theo grid model -->
+                        <div class="form-group row">
+                            <label for="hovaten">Họ và tên</label>
+                            <input id="modal-ho-va-ten" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="sodienthoai">Số điện thoại</label>
+                            <input id="modal-so-dien-thoai" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="diachi">Địa chỉ</label>
+                            <input id="modal-dia-chi" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email">Email</label>
+                            <input id="modal-email" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="loinhan">Lời nhắn</label>
+                            <input id="modal-loi-nhan" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="voucherId">Mã giảm giá</label>
+                            <input id="modal-voucherId" class="form-control bg-light" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="thongtinchitiet">Thông tin chi tiết</label>
+                            <textarea id="modal-thong-tin-chi-tiet" class="form-control bg-light" type="text" rows="5"> 
+                            </textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btn-quay-lai" class="btn btn-danger">Quay lại</button>
+                            <button id="btn-tao-don" class="btn btn-orange">Tạo đơn</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal OrderId - chứa thông báo tạo đơn hàng thành công-->
+     <div>
+        <div id="orderId-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog ml-0">
+                <div class="modal-orderId modal-content bg-orange">
+                    <div class="row form-group">
+                        <div class="col-sm-11">
+                            <h4><b>Cám ơn bạn đã đặt hàng tại Pizza 365. Mã đơn hàng của bạn là:</b></h4>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            <label><b>Mã đơn hàng: </b></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="inp-orderId-modal" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> 06 API sample cho Pizza 365 Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<!-- file html dùng để thử tác động của javascript vào các thành phần trang web-->
+<script>
+    const gREQUEST_STATUS_OK = 200;
+    const gREQUEST_CREATE_OK = 201; // status 201 tao thanh cong
+    const gREQUEST_READY_STATUS_FINISH_AND_OK = 4;
+    //gọi mẫu lấy danh sách order
+    function onBtnGetAllOrderClick() {
+        "use strict";
+        //base url
+        const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+        // create a request
+        var vXmlHttpGetAllOrder = new XMLHttpRequest();
+        vXmlHttpGetAllOrder.open("GET", vBASE_URL, true);
+        vXmlHttpGetAllOrder.send();
+        vXmlHttpGetAllOrder.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    var vOrderList = vXmlHttpGetAllOrder.responseText;
+                    console.log(vOrderList);
+                }
+            }
+    }
+
+    //gọi tạo một order mới
+    function onCreateOrderClick() {
+        "use strict";
+        //base url
+        const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+        var vObjectRequest = {
+            kichCo: "M",
+            duongKinh: "25",
+            suon: "4",
+            salad: "300",
+            loaiPizza: "HAWAII",
+            idVourcher: "16512",
+            idLoaiNuocUong: "PEPSI",
+            soLuongNuoc: "3",
+            hoTen: "Phạm Thanh Bình",
+            thanhTien: "200000",
+            email: "binhpt001@devcamp.edu.vn",
+            soDienThoai: "0865241654",
+            diaChi: "Hà Nội",
+            loiNhan: "Pizza đế dày"
+        }
+        var vXmlHttpCreateOrder = new XMLHttpRequest();
+        vXmlHttpCreateOrder.open("POST", vBASE_URL, true);
+        vXmlHttpCreateOrder.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        vXmlHttpCreateOrder.send(JSON.stringify(vObjectRequest));
+        vXmlHttpCreateOrder.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_CREATE_OK) {
+                    var vCreatedOrder = vXmlHttpCreateOrder.responseText;
+                    console.log(vCreatedOrder);
+                }
+            }
+    }
+
+    //gọi mẫu get order by ID
+    function onGetOrderByIdClick() {
+        "use strict";
+        //base url
+        const gBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+        var vOrderId = "n1bhfyW18Y";
+
+        var vXmlHttpGetOrderById = new XMLHttpRequest();
+        vXmlHttpGetOrderById.open("GET", gBASE_URL + "/" + vOrderId, true);
+        vXmlHttpGetOrderById.send();
+        vXmlHttpGetOrderById.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    console.log(vXmlHttpGetOrderById.responseText);
+                }
+            }
+    }
+
+    //confirm hoặc cancel 01 order (update)
+    function onUpdateOrderClick() {
+        "use strict";
+        //base url
+        const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+        var vDatabaseIdOfOrder = "3354";   //chú ý đây là ID tự sinh bởi Database, không phải là vOrderId, ( ví dụ: "qAsV7A3SRo")
+        var vObjectRequest = {
+            trangThai: "confirmed" //3: trang thai open, confirmed, cancel tùy tình huống
+        }
+
+        var vXmlHttpUpdateOrder = new XMLHttpRequest();
+        vXmlHttpUpdateOrder.open("PUT", vBASE_URL + "/" + vDatabaseIdOfOrder);
+        vXmlHttpUpdateOrder.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        vXmlHttpUpdateOrder.send(JSON.stringify(vObjectRequest));
+        vXmlHttpUpdateOrder.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    var vUpdatedOrder = vXmlHttpUpdateOrder.responseText;
+                    console.log(vUpdatedOrder);
+                }
+            }
+    }
+
+    //check mã giảm giá
+
+    function onCheckVoucherIdClick() {
+        "use strict";
+        const vBASE_URL = "http://42.115.221.44:8080/devcamp-voucher-api/voucher_detail/";
+        var vVoucherId = "12332";  //một số mã đúng để test: 95531, 81432,...lưu ý test cả mã sai
+        // nếu mã giảm giấ đã nhập, tạo xmlHttp  request và gửi về server
+        var vXmlHttp = new XMLHttpRequest();
+        vXmlHttp.open("GET", vBASE_URL + vVoucherId, false);
+        vXmlHttp.send(null);
+        var vStatusCode = vXmlHttp.status;
+        if (vStatusCode == gREQUEST_STATUS_OK) { // restFullAPI successful
+            // nhận lại response dạng JSON ở vXmlHttp.responseText và chuyển thành object
+            console.log(vXmlHttp.responseText);
+        }
+        else {
+            // không nhận lại được data do vấn đề gì đó: khả năng mã voucher ko dúng
+            console.log("Không tìm thấy voucher " + vXmlHttp.responseText);
+        }
+    }
+
+    //mã nguồn để load data drink list (danh sách loại nước uống) về
+    function onGetDrinkListClick() {
+        "use strict";
+        var vXhttp = new XMLHttpRequest();
+        vXhttp.onreadystatechange =
+            function () {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    console.log(vXhttp.responseText); //ghi response text ra console.log
+                }
+            };
+        vXhttp.open("GET", "http://42.115.221.44:8080/devcamp-pizza365/drinks", true);
+        vXhttp.send();
+    }
+</script>
+
+<body class="jumbotron container">
+    <p id="cmt2dev">Test Page for Javascrip Tasks. F5 to run code. </p>
+    <div class="row form-group">
+        <button  class="btn btn-info m-1" onclick="onBtnGetAllOrderClick()">Call api get all orders!</button>
+        <button  class="btn btn-success m-1" onclick="onCreateOrderClick()">Call api create order!</button>
+        <button  class="btn btn-warning m-1" onclick="onGetOrderByIdClick()">Call api get order by id!</button>
+        <button  class="btn btn-primary m-1" onclick="onUpdateOrderClick()">Call api update order!</button>
+        <button  class="btn btn-info m-1" onclick="onCheckVoucherIdClick()">Call api check voucher by id!</button>
+        <button  class="btn btn-danger m-1" onclick="onGetDrinkListClick()">Call api Get drink list!</button>
+    </div>
+    <div class="row form-group">
+        <p id="testP" class="h4"> Demo 06 API for Pizza 365 Project: </p>
+    </div>
+    <div class="row form-group">
+        <ul>
+            <li>get all Orders: lấy tất cả orders </li>
+            <li>create Order: tạo 1 order</li>
+            <li>get Order by id: lấy 1 order bằng id </li>
+            <li>update Order: update 01 order</li>
+            <li>check voucher by id: check thông tin mã giảm giá, quan trọng là có hay không, và % giảm giá </li>
+            <li>get drink list: lấy danh sách đồ uống</li>
+        </ul>
+    </div>
+    <div class="row form-group">
+        <strong class="text-danger"> Bật console log để nhìn rõ output </strong>
+    </div>
+</body>
+
+</html>

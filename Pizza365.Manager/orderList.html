@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Order List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Import Datatable sau jquery -->
+    <!-- Import them style bootstrap cho datatable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Các file css và js tự định nghĩa thêm -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">DANH SÁCH ĐƠN HÀNG</h2>
+        <div class="row jumbotron py-3 m-8">
+            <div class="col-md-12">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Trạng thái order</label>
+                        <select id="select-trang-thai" class="form-control" >
+                            <option value="all">All</option>
+                            <option value="open">Open</option>
+                            <option value="confirm">Confirmed</option>
+                            <option value="cancel">Cancel</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Loại Pizza</label>
+                        <select id="select-loai-pizza" class="form-control">
+                            <option value="all">All</option>
+                            <option value="bacon">Bacon</option>
+                            <option value="hawaii">Hawaii</option>
+                            <option value="seafood">Seafood</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4 text-right mt-4 ">
+                        <button id="btn-filter" class="btn btn-primary btn-group" >Lọc order</button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-hover" id="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Kích cỡ Combo</th>
+                    <th>Loại Pizza</th>
+                    <th>Nước uống</th>
+                    <th>Thành tiền</th>
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Trạng thái</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <!-- Modal body - chứa form dữ liệu -->
+    <div>
+        <div id="order-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="h4-modal-title">Chi tiết đơn hàng</h4>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                         <!-- Form thiết kế như form bình thường, theo grid model -->
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Order ID (mã đơn hàng)</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-orderID" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Cỡ combo</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-kich-co-combo" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Đường kính Pizza</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-duong-kinh-pizza" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Sườn nướng (miếng)</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-suon-nuong" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Đồ uống</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-do-uong" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Số lượng nước uống</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-so-luong-nuoc-uong" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Voucher Id (mã giảm giá)</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-voucherId" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Loại Pizza</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-loai-pizza" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Salad (g)</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-salad" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Thành tiền</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-thanh-tien" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Discount (giảm giá)</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-discount" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Họ và tên</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-ho-va-ten" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Email</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-email" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Số điện thoại</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-so-dien-thoai" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Địa chỉ</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-dia-chi" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Lời nhắn</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-loi-nhan" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Trạng thái đơn hàng</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-trang-thai" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Ngày tạo đơn</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-ngay-tao-don" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <label for="">Ngày cập nhật</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="inp-ngay-cap-nhat" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn-confirm" class=" btn btn-warning">Confirm</button>
+                                <button id="btn-cancel" class=" btn btn-danger">Cancel</button>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

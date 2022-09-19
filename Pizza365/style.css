@@ -1,0 +1,75 @@
+
+.navbar .navbar-expand-lg{
+    background-color: orange;
+}
+
+.text-orange {
+    color:orange;
+}
+
+/* content Tại sao là Pizza 365 */
+.title {
+    text-align: center;
+    color: orange;
+    padding-top: 1cm;
+    padding-bottom: 0.5cm;
+}
+
+.bg-lightgolden {
+    background-color: lightgoldenrodyellow;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-lightsalmon {
+    background-color: lightsalmon;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.btn-orange {
+    background-color: orange;
+}
+
+.btn-yellow {
+    background-color: yellow;
+}
+
+
+/* Chọn size Pizza*/
+
+
+.card.card-header {
+    color:white;
+}
+
+/* Modal thông tin đơn hàng */
+
+.modal-content{
+    width: 700px;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+}
+
+.modal-dialog{
+    margin-left: 30%;
+    
+}
+
+.modal-orderId {
+    width: 1000px;
+    padding: 1cm;
+    padding-left: 1cm;
+    margin-right: 0%;
+    margin-top: 2cm;
+    margin-left: 9cm;
+}
+
+
+textarea {
+    height: auto;
+}
